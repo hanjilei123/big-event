@@ -1,0 +1,50 @@
+body {
+    background: url('../images/login_bg.jpg') no-repeat 0 0 / cover;
+    /* background-size: cover; */
+}
+
+#logo {
+    margin: 20px 0 0 160px;
+}
+
+.box {
+    width: 400px;
+    height: 310px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+}
+
+/* 默认让注册的盒子先隐藏 */
+.register {
+    display: none;
+}
+
+.login_title {
+    height: 60px;
+    background: url('../images/login_title.png') no-repeat center;
+}
+
+.layui-form {
+    margin: 0 25px;
+}
+
+.layui-form a {
+    float: right;
+}
+
+.layui-form-item {
+    position: relative;
+}
+
+.layui-icon {
+    position: absolute;
+    left: 6px;
+    top: 10px;
+}
+
+.layui-input {
+    padding-left: 25px;
+}
