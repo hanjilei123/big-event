@@ -59,3 +59,23 @@ form.verify({
 });
 
 // -----------------  登录 --------------------
+// 找到登录的表单，注册submit事件
+$('.login form').on('submit', function (e) {
+    e.preventDefault();
+    // ajax提交
+    $.ajax({
+        type: 'POST',
+        url: 'http://ajax.frontend.itheima.net/api/login',
+        data: $(this).serialize(), // 使用serialize，一定要检查name属性
+        success: function (res) {
+            // 无论登录成功，还是失败，都给提示
+            layer.msg(res.message);
+            if (res.status === 0){
+                // 登录成功，保存token
+                localStorage.setItem('token', res.token);
+                // 跳转到后台首页 index.html
+                location.href = '/index.html'
+            }
+        }
+    })
+})
