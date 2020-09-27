@@ -1,0 +1,27 @@
+// 获取用户信息，并渲染到页面中
+function renderUser () {
+    $.ajax({
+        url: 'http://ajax.frontend.itheima.net/my/userinfo',
+        headers: {
+            Authorization: localStorage.getItem('token')
+        },
+        success: function (res) {
+            // console.log(res);
+            if (res.status === 0) {
+                // 渲染用户的用户名(优先使用nickname，没有nickname，使用username)
+                let name = res.data.nickname || res.data.username;
+                $('.username').text(name);
+                // 渲染头像(优先使用图片类型的头像，其次使用名字的第一个字符)
+                if (res.data.user_pic) {
+                    // 有图片
+                    $('.layui-nav-img').attr('src', res.data.user_pic).show();
+                } else {
+                    // 没有图片
+                    let first = name.substr(0, 1).toUpperCase();
+                    $('.avatar').text(first).css('display', 'inline-block');
+                }
+            }
+        }
+    });
+}
+renderUser();
