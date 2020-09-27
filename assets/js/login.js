@@ -38,6 +38,7 @@ $('.register form').on('submit', function (e) {
 // 使用layui的内置模块，必须先加载模块
 // let 变量 = layui.模块名;
 let form = layui.form;
+// console.log(  form  )
 // 调用form模块的verify方法，自定义验证规则
 form.verify({
     // 键: 值,
