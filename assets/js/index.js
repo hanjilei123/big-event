@@ -1,10 +1,7 @@
 // 获取用户信息，并渲染到页面中
-function renderUser () {
+function renderUser() {
     $.ajax({
-        url: 'http://ajax.frontend.itheima.net/my/userinfo',
-        headers: {
-            Authorization: localStorage.getItem('token')
-        },
+        url: '/my/userinfo',
         success: function (res) {
             // console.log(res);
             if (res.status === 0) {
@@ -25,3 +22,24 @@ function renderUser () {
     });
 }
 renderUser();
+
+
+
+
+
+
+
+
+// -------------- 退出功能 -----------------
+// 点击退出，询问，删除token，跳转到login.html
+$('#logout').on('click', function () {
+    layer.confirm('确定退出吗？', { icon: 3, title: '提示' }, function (index) {
+        //do something
+        // 移除token
+        localStorage.removeItem('token');
+        // 跳转到login.html
+        location.href = '/login.html';
+
+        layer.close(index); // 关闭弹层
+    });
+});

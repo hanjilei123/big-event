@@ -1,3 +1,9 @@
+<script>
+    if (localStorage.getItem('token') === null) {
+        // 说明用户没有登录，所以要跳转到login.html
+        location.href = '/login.html';
+    }
+</script>
 <!DOCTYPE html>
 <html>
 
@@ -30,7 +36,7 @@
                         <dd><a href="">重置密码</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href=""><i class="layui-icon layui-icon-logout"></i>退出</a></li>
+                <li class="layui-nav-item"><a href="javascript:;" id="logout"><i class="layui-icon layui-icon-logout"></i>退出</a></li>
             </ul>
         </div>
 
@@ -78,6 +84,7 @@
     </div>
     <script src="/assets/lib/layui/layui.all.js"></script>
     <script src="/assets/lib/jquery.js"></script>
+    <script src="/assets/js/common.js"></script>
     <script src="/assets/js/index.js"></script>
 </body>
 

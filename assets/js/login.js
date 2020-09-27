@@ -18,7 +18,7 @@ $('.register form').on('submit', function (e) {
     // console.log(data);
     $.ajax({
         type: 'POST',
-        url: 'http://ajax.frontend.itheima.net/api/reguser',
+        url: '/api/reguser',
         data: data,
         success: function (res) {
             // 无论成功还是失败，给出提示
@@ -66,7 +66,7 @@ $('.login form').on('submit', function (e) {
     // ajax提交
     $.ajax({
         type: 'POST',
-        url: 'http://ajax.frontend.itheima.net/api/login',
+        url: '/api/login',
         data: $(this).serialize(), // 使用serialize，一定要检查name属性
         success: function (res) {
             // 无论登录成功，还是失败，都给提示
