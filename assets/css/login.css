@@ -1,6 +1,5 @@
 body {
     background: url('/assets/images/login_bg.jpg') no-repeat 0 0 / cover;
-    /* background-size: cover; */
 }
 
 #logo {
@@ -17,7 +16,6 @@ body {
     background-color: #fff;
 }
 
-/* 默认让注册的盒子先隐藏 */
 .register {
     display: none;
 }
