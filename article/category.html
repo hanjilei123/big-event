@@ -13,57 +13,83 @@
 
     <div class="layui-card">
         <div class="layui-card-header">
-            类别管理
+                类别管理
             <button type="button" class="layui-btn layui-btn-normal layui-btn-sm">添加类别</button>
-        </div>
-        <div class="layui-card-body">
-                layui.code
-                <table class="layui-table">
-                  <colgroup>
+    </div>
+    <div class="layui-card-body">
+            <table class="layui-table">
+                <colgroup>
                     <col width="40%">
                     <col width="40%">
                     <col>
-                  </colgroup>
-                  <thead>
+            </colgroup>
+                <thead>
                     <tr>
-                      <th>分类名称</th>
-                      <th>分类别名</th>
-                      <th>操作</th>
-                    </tr> 
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>贤心</td>
-                      <td>啦啦啦啦啦</td>
-                      <td>
-                          <!-- 编辑按钮 -->
-                          <button type="button" class="layui-btn  layui-btn-xs">编辑</button>
-                          <!-- 删除按钮 -->
-                          <button type="button" class="layui-btn  layui-btn-xs  layui-btn-danger">删除</button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-        </div>
-    </div>
-
-
+                        <th>分类名称</th>
+                        <th>分类别名</th>
+                        <th>操作</th>
+                </tr>
+            </thead>
+                <tbody>
+                </tbody>
+        </table>
+    </div></div>
     <script type="text/html" id="tpl-list">
         {{each data val}}
         <tr>
             <td>{{val.name}}</td>
             <td>{{val.alias}}</td>
-            <th>
-                <!-- 编辑按钮 -->
-                <button type="button" class="layui-btn layui-btn-xs">编辑</button>
-                <!-- 删除按钮 -->
+            <td>
+                <button data-id="{{val.Id}}" data-name="{{val.name}}" data-alias="{{val.alias}}" type="button" class="layui-btn layui-btn-xs">编辑</button>
                 <button data-id="{{val.Id}}" type="button" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
-            </th>
+            </td>
         </tr>
         {{/each}}
     </script>
-
-
+    <script type="text/html" id="tpl-add">
+    <form class="layui-form add-form" action="" style="margin: 30px; margin-left: 0px;">
+     <div class="layui-form-item">
+         <label class="layui-form-label">类别名称</label>
+         <div class="layui-input-block">
+         <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+         </div>
+     </div>
+     <div class="layui-form-item">
+         <label class="layui-form-label">类别别名</label>
+         <div class="layui-input-block">
+         <input type="text" name="alias" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+         </div>
+     </div>
+     <div class="layui-form-item">
+         <div class="layui-input-block">
+         <button class="layui-btn" lay-submit lay-filter="formDemo">确认添加</button>
+         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+         </div>
+     </div>
+        </form>
+    </script>
+    <script type="text/html" id="tpl-edit">
+<form lay-filter="xxx" class="layui-form edit-form" action="" style="margin: 30px; margin-left: 0px;">
+    <div class="layui-form-item">
+        <label class="layui-form-label">类别名称</label>
+        <div class="layui-input-block">
+        <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">类别别名</label>
+        <div class="layui-input-block">
+        <input type="text" name="alias" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <input type="hidden" name="Id">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">确认修改</button>
+        </div>
+    </div>
+</form>
+    </script>
     <script src="/assets/lib/jquery.js"></script>
     <script src="/assets/lib/template-web.js"></script>
     <script src="/assets/lib/layui/layui.all.js"></script>
