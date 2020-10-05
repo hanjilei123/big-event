@@ -22,7 +22,7 @@ $('body').on('click', 'button:contains("删除")', function () {
             success: function (res) {
                 layer.msg(res.message);
                 if (res.status === 0) {
-                    renderCategory();
+                    fn();
                 }
             }
         });
@@ -49,7 +49,7 @@ $('body').on('submit', '.add-form', function (e) {
         success: function (res) {
             layer.msg(res.message);
             if (res.status === 0) {
-                renderCategory();
+                fn();
                 layer.close(addIndex);
             }
         }
@@ -84,7 +84,7 @@ $('body').on('submit', '.edit-form', function (e) {
         success: function (res) {
             layer.msg(res.message);
             if (res.status === 0) {
-                renderCategory();
+                fn();
                 layer.close(editIndex);
             }
         }
