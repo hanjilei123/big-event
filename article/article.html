@@ -15,17 +15,13 @@
     <div class="layui-card">
         <div class="layui-card-header">文章列表</div>
         <div class="layui-card-body">
-            <!-- 内容区一：表单搜索区 start -->
             <form action="" class="layui-form search">
                 <div class="layui-form-item">
-
                     <div class="layui-inline">
                         <div class="layui-input-inline" style="width: 200px;">
-                            <select name="category" lay-verify="">
-                                
+                            <select name="category" lay-verify=""> 
                             </select>
                         </div>
-
                         <div class="layui-input-inline" style="width: 200px;">
                             <select name="state" lay-verify="">
                                 <option value="">所有状态</option>
@@ -43,10 +39,6 @@
 
                 </div>
             </form>
-            <!-- 内容区一：表单搜索区 end -->
-
-
-            <!-- 内容区二：表格区 start -->
             <table class="layui-table">
                 <colgroup>
                     <col width="40%">
@@ -68,18 +60,9 @@
                     
                 </tbody>
             </table>
-
-            <!-- 内容区二：表格区 end -->
-
-
-            <!-- 内容区三：分页区 start -->
             <div id="page"></div>
-            <!-- 内容区三：分页区 end -->
         </div>
     </div>
-
-
-    <!-- 文章列表模板 start -->
     <script type="text/html" id="tpl-list">
         {{each data val}}
         <tr>
@@ -88,18 +71,12 @@
             <td>{{val.pub_date|dateFormat}}</td>
             <td>{{val.state}}</td>
             <th>
-                <!-- 编辑按钮 -->
                 <a href="/article/edit.html?id={{val.Id}}" class="layui-btn layui-btn-xs">编辑</a>
-                <!-- 删除按钮 -->
                 <button data-id="{{val.Id}}" type="button" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
             </th>
         </tr>
         {{/each}}
     </script>
-    <!-- 文章列表模板 end -->
-
-    
-    <!-- 下拉框的分类模板 start -->
     <script type="text/html" id="tpl-category">
         <option value="">所有分类</option>
 
@@ -107,8 +84,6 @@
         <option value="{{val.Id}}">{{val.name}}</option>
         {{/each}}
     </script>
-    <!-- 下拉框的分类模板 end -->
-
     <script src="/assets/lib/layui/layui.all.js"></script>
     <script src="/assets/lib/jquery.js"></script>
     <script src="/assets/lib/template-web.js"></script>

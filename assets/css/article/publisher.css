@@ -1,0 +1,27 @@
+body {
+    background-color: #f2f3f5;
+}
+.layui-card {
+    margin: 20px;
+}
+.cover-box {
+    display: flex;
+}
+.cover-left {
+    width: 400px;
+    height: 280px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+.cover-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.img-preview {
+    width: 200px;
+    height: 140px;
+    background-color: #ccc;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
